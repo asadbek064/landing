@@ -1,0 +1,62 @@
+<mat-accordion fxFlex="100%" fxLayoutAlign="center">
+    <mat-expansion-panel fxFlex="50%" fxFlex.xs="90%" #mep="matExpansionPanel" hideToggle>
+        <mat-expansion-panel-header fxLayout="row">
+            <mat-panel-title fxLayoutAlign="center">
+                Contact Us
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-card fxFlex="100%">
+            <mat-card-content>
+                <form fxLayout="column" fxFlex="100%" [formGroup]="ContactUsFormGroup">
+                    <mat-form-field>
+                        <mat-label>NAME</mat-label>
+                        <input
+                            type="text"
+                            matInput
+                            formControlName="Name"
+                            required
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>EMAIL ADDRESS</mat-label>
+                        <input
+                            type="email"
+                            matInput
+                            formControlName="Email"
+                            required
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>MESSAGE</mat-label>
+                        <input
+                            type="text"
+                            matInput
+                            formControlName="Message"
+                            required
+                        />
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>ADDITIONAL DETAILS</mat-label>
+                        <textarea
+                            type="text"
+                            matInput
+                            formControlName="AdditionalDetails"
+                            required
+                            style="resize:none; height: 120px;"
+                        ></textarea>
+                    </mat-form-field>
+
+                    <button
+                        mat-raised-button
+                        color="primary"
+                        type="submit"
+                     (click)="Submit()"
+                    >Submit</button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </mat-expansion-panel>
+</mat-accordion>

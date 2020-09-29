@@ -1,0 +1,63 @@
+@import '../../../assets/styles/global/colors';
+
+p {
+    color: black;
+}
+
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+#TermsAndConditons {
+    color: $dark-blue;
+}
+
+.basicInformation {
+    display: flex;
+    flex-direction: column;
+}
+
+// hide spinner
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+// hide spinner
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+ }
+
+.linked {
+    display: flex;
+    flex-direction: column;
+}
+
+.spaceBetween {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+     width: 90%;
+    }
+ }

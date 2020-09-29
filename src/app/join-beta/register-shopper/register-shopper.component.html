@@ -1,0 +1,156 @@
+<div class="singup-page">
+    <div class="content" >
+        <mat-card>
+
+            <div class="text-center">
+                <h2 class="app-name">Sign up for Beta</h2>
+            </div>
+
+        <mat-card-content>
+        <mat-horizontal-stepper #stepper >
+            <mat-step [stepControl]="firstFormGroup">
+                <form class="signup-form" [formGroup]="firstFormGroup" fxLayout="column">
+                    <div  fxlayout="row" fxlayout.lt-md="column">
+                        <div fxFlexFill>
+                            <mat-form-field class="w-100" >
+                                <input matInput type="text" placeholder="First Name" formControlName="firstName" required
+                                    pattern="[a-zA-Z][a-zA-Z ]+" />
+                                <mat-error *ngIf="firstFormGroup.hasError('required', 'firstName')">required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div  fxlayout="row" fxlayout.lt-md="column">
+                        <div fxFlexFill>
+                            <mat-form-field class="w-100" >
+                                <input matInput placeholder="Last Name" formControlName="lastName" [required] = "true"
+                                    pattern="[a-zA-Z][a-zA-Z ]+" />
+                                <mat-error *ngIf="firstFormGroup.hasError('required', 'lastName')">required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div  fxlayout="row" fxlayout.lt-md="column">
+                        <div fxFlexFill>
+                            <mat-form-field class="w-100" >
+                                <input matInput type="email" placeholder="Email" formControlName="email" [required] ="true" />
+                                <mat-error *ngIf="firstFormGroup.hasError('required', 'email')">required</mat-error>
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+
+                    <div  fxlayout="row" fxlayout.lt-md="column">
+                        <div fxFlexFill>
+                            <mat-form-field class="w-100" >
+                                <input matInput type="email" placeholder="Confirm Email" formControlName="emailConfirm"
+                                    [required] = "true" />
+                                <mat-error *ngIf="
+                                firstFormGroup.hasError('emailConfirm')
+                                    ">
+                                    Email not match
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div  fxLayout="row" fxLayout.lt-md="column">
+                        <div fxFlexFill>
+                            <button
+                            mat-raised-button color="primary"
+                            (click)="goStepTwo() "
+                            class="w-100">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </mat-step>
+
+            <mat-step [stepControl]="secoundFormGroup">
+                <form class="signup-form"[formGroup]="secoundFormGroup" fxFlex>
+
+
+                    <div  fxlayout="row" fxlayout.lt-md="column">
+                        <div fxFlexFill>
+
+                               <mat-form-field class="w-100" >
+
+                            <input type="text"
+                                   matInput
+                                   [matAutocomplete]="auto"
+                                   #input
+                                   placeholder="Favorite Nonprofit"
+                                   formControlName="designated_NonProfit"
+                                   (keyup)="searchServices.search(input.value)" />
+                                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
+                                        (optionSelected)='selectedChoice($event.option.value)'>
+                                        <mat-option *ngFor="
+                                            let option of searchServices.options | async" [value]="option">
+                                            {{ option }}
+                                        </mat-option>
+                                 </mat-autocomplete>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div  fxlayout="row" fxlayout.lt-md="column">
+                        <div fxFlexFill>
+
+                           <mat-form-field class="w-100" >
+                               <input matInput type="number" placeholder="Zipcode" formControlName="zipcode" [required] ="true" />
+                               <mat-error *ngIf="secoundFormGroup.hasError('required', 'zipcode')">
+                                   required
+                               </mat-error>
+                           </mat-form-field>
+
+                        </div>
+                    </div>
+
+                    <div  fxLayout="row" fxLayout.lt-md="column" style="margin: 20px 0 30px 0">
+                        <div fxFlex>
+                            <mat-checkbox value="termsAgreeBox" formControlName="termsAgreeBox">I agree to the
+                                <span style="color: #68CDE7;">terms of service</span></mat-checkbox>
+                        </div>
+                    </div>
+
+                    <div  fxLayout="row" fxLayout.lt-md="column" style="margin: 20px 0 30px 0">
+                        <div fxFlex>
+                            <mat-checkbox formControlName="eNewsletter" value="eNewsletter">
+                                eNewsletter
+                            </mat-checkbox>
+                        </div>
+                    </div>
+
+
+                    <div  fxLayout="row" fxLayoutAlign="space-evenly" fxLayout.xs="column">
+
+                            <button
+                                 mat-button
+                                 matStepperPrevious
+                                 fxFlex="40%"
+                            >
+                                 Back
+                                </button>
+
+                                 <button
+                                 fxFlex="40%"
+                                (click)="onSubmit()"
+                                mat-raised-button
+                                color="primary"
+
+                            >
+                                Submit
+                            </button>
+
+                    </div>
+                </form>
+
+            </mat-step>
+        </mat-horizontal-stepper>
+    </mat-card-content>
+
+</mat-card>
+    </div>
+</div>

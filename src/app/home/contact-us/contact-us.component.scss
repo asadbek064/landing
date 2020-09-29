@@ -1,0 +1,21 @@
+@import '../../../assets/styles/global/colors';
+
+
+mat-accordion {
+    mat-panel-title {
+        color: white!important;
+    }
+
+    mat-card{
+    
+    }
+
+    mat-panel-title{
+        font-size: x-large;
+    }
+}
+
+mat-expansion-panel{
+   background-color: $light-blue;
+}
+

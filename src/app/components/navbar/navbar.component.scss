@@ -1,0 +1,92 @@
+@import '../../../assets/styles/global/colors';
+
+* {
+    overflow-y: hidden;
+}
+.sidenav {
+    width: 200px;
+}
+
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+mat-toolbar {
+    background-color: $black;
+}
+
+.LogoHome-notext {
+    margin-top: 1em;
+    width: 2em;
+    height: fit-content;
+}
+.LogoHome-notext:hover {
+    cursor: pointer;
+}
+.LogoHome-notext:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.NavTop {
+    width: 100%;
+    display: flex;
+    color: white;
+
+    .Logo {
+        margin-top: 1rem;
+        order: 0;
+        background-color: transparent;
+        border-radius: 0px; 
+        .LogoHome  {
+            width: 10em;
+            height: fit-content;
+        }
+        .LogoHome:hover {
+            cursor: pointer;
+        }
+        .LogoHome:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    .NavDiv {
+        display: flex;
+        justify-content: center;
+        order: 1;
+        margin-left: auto;
+        .Nav-Btn {
+            transition: 0.26s;
+    
+        }
+        .Nav-Btn:hover {
+            background-color:  $yellow;
+            color: $black;
+            margin-top: 2em;
+        }
+    }
+
+    .JoinBeta-Btn {
+        margin-left: auto;
+        margin-top: 1.5em;
+        height: 50%;
+        order: 2;
+        background-color: $light-blue;
+        transition: 0.3s;
+    }
+    .JoinBeta-Btn:hover {
+        background-color:  $yellow;
+        
+    }
+}
+
+.position-fixed {
+    position: fixed;
+}

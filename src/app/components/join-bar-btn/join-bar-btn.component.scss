@@ -1,0 +1,20 @@
+@import '../../../assets/styles/global/colors';
+
+.container {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    height: 5vh;
+    background-color: $black;
+    color: white;
+}
+
+button {
+    width: 10rem;
+    font-size: large;
+}
+
+@media only screen and (max-width: 600px) { 
+    button {
+        height: 2.2rem;
+    }
+}

@@ -1,0 +1,101 @@
+@import '../../../assets/styles/global/colors';
+
+.Title { 
+    margin-top: 4vh;
+    color: $black;
+    .TagTitle {
+        font-size: 3vh;
+        font-weight: bold;
+        white-space: pre;
+    }
+    .TagSubText {
+        text-align: center;
+        margin-top: 2vh;
+        line-height: 1.2;
+        font-size: 2vh;
+    }
+}
+
+
+.Container {
+
+     margin-top: 7vh;
+    .Cycle-Container {
+       
+    }
+
+    
+    .Cycle-Container object {
+        width: 100%;
+    }
+    
+    .Video-Container {
+       
+    }
+
+    .Video-Container  iframe{
+        overflow: hidden;
+        box-shadow: 1px 5px 10px $black;
+        margin-bottom: 1vh;
+    }
+
+}
+
+.ToolTip {
+        margin-top: 3vh;
+        
+    }
+
+.quote-wrapper {
+     background: $yellow;
+     border-radius: 50%;
+     width: 100px;
+     height: 100px;
+     color: $black;
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+     transition: 0.26s;
+
+    }
+.quote-wrapper:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.quote-wrapper p {
+    font-weight: bold;
+    font-size: medium;
+ }
+.quote {
+    text-align: center;
+    margin-top: 2.5vh;
+    
+}
+
+.ToolTip-mobile {
+    #card-1 {
+        background-color: $light-blue;
+    }
+    #card-2 {
+        background-color: $yellow;
+
+    }
+    #card-3 {
+        background-color: $light-green;
+
+    }
+
+    margin: 1rem!important;
+
+    mat-card {
+        text-align: center;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+        p {
+            color: $black!important;
+            font-weight: 750!important;
+            font-size: large;
+        }
+    }
+}
+
+    

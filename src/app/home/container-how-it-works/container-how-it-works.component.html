@@ -1,0 +1,97 @@
+
+<div class="main-container" fxFlex fxLayout="column" fxFlex="100%">
+    <!-- Section Title and subtext -->
+    <div class="Title" fxFlex fxLayout="column">
+        <div class="TagTitle"  fxFlexAlign="center">
+            How It Works
+        </div>
+        <div class="TagSubText" fxFlexAlign="center">
+            Web based marketplace that brings Nonprofits, Businesses and Shoppers together
+        </div>
+    </div>
+
+    <!-- cycle vector and infographic video -->
+    <div class ="Container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-evenly center" >
+        <div class="Cycle-Container" fxFlex="40%" fxFlex.xs="95%">
+            <object  class="Cycle"y data="../../../assets/svg/vector-svg/cycle-lg.svg" type="image/svg+xml">
+                <!-- inseet fallback jpg -->
+            </object>
+        </div>
+        <div class="Video-Container" fxLayout="column" fxLayoutAlign="space-between " fxFlex="30%" fxFlex.xs="95%">
+            <iframe width="100%" height="300px" [src]='VideoUrl'
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen 
+                (load)="removeTitle()"
+               ></iframe>
+            
+             <app-learn-more-btn
+                [BackgroundColor]="LearnMoreColor"
+                [ButtonName]="LearnMoreName"
+                [Path]="LearnMorePath"
+                [color]="'primary'"
+            ></app-learn-more-btn>
+        </div>
+    </div>
+ 
+    <!-- 3 circle tooltips -->
+    <div class="ToolTip" fxLayout="row"  fxLayout.xs="row" fxLayoutAlign="space-evenly center" *ngIf="!(isMobile | async)">
+        <div  fxFlex.xs="25%">
+            <div class="quote-wrapper">
+                <div fxLayout="column" >
+                    <div class="quote" 
+                        matTooltip="Info about the action"
+                        [matTooltipPosition]="'above'">
+                        <p>PieCredits</p>
+                        <p>$25</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div fxFlex.xs="25%">
+            <div class="quote-wrapper">
+                <div fxLayout="column">
+                   <div class="quote"
+                        matTooltip="Info about the action"
+                        [matTooltipPosition]="'above'">
+                       <p>Virtual</p>
+                       <p>Campaigns</p>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+        <div  fxFlex.xs="25%">
+            <div class="quote-wrapper">
+                <div fxLayout="column">
+                    <div class="quote"
+                        matTooltip="Info about the action"
+                        [matTooltipPosition]="'above'">
+                        <p>Favorite</p>
+                        <p>Nonprofit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- tool tip mobile designe-->
+    <div class="ToolTip-mobile"fxFlex="100%" fxLayout="row" fxLayoutAlign="space-evenly" *ngIf="(isMobile | async)">
+        <mat-card fxLayout="column" fxFlex="20%" fxFlex.xs="30%" id="card-1">
+            <p>PieCredits</p>
+            <p>$25</p>
+        </mat-card>
+
+        <mat-card fxLayout="column" fxFlex="20%" fxFlex.xs="30%" id="card-2">
+            <p>Virtual</p>
+            <p>Campaigns</p>
+        </mat-card>
+
+        <mat-card fxLayout="column" fxFlex="20%" fxFlex.xs="30%" id="card-3">
+            <p>Favorite</p>
+            <p>Nonprofit</p>
+        </mat-card>
+        
+    </div>
+</div>
+            

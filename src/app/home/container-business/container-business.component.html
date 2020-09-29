@@ -1,0 +1,107 @@
+<div fxLayout="column">
+    <div class="Title" fxFlex fxLayout="column">
+        <div class="TagTitle"  fxFlexAlign="center">
+            Businesses
+        </div>
+        <div class="TagSubText" fxFlexAlign="center">
+            Partner with Nonprofits to reach new customers and generate cash
+        </div>
+    </div>
+
+    <div class="wrapper" fxLayout="row" fxLayout.xs ="column" fxLayoutAlign="space-evenly">
+        <div class="container box-1" fxLayout="column" fxFlex="40%">
+            <mat-card>
+                <mat-card-title fxLayoutAlign="center">Why use PieShares</mat-card-title>
+
+                <mat-card-content>
+                    <mat-list clas="ListOne">
+                        <mat-list-item>
+                            <mat-icon  [ngStyle]="{'color':'#68CDE7'}"  matListIcon style="font-size: small;">lens</mat-icon>
+                            Generate New Revenue and Customers
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon  [ngStyle]="{'color':'#68CDE7'}" matListIcon style="font-size: small;">lens</mat-icon>
+                            Get cash days after campaign closes
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon [ngStyle]="{'color':'#68CDE7'}" matListIcon style="font-size: small;">lens</mat-icon>
+                            <p>Support Nonprofit through<span style="font-style: italic;">"Favorite Nonprofit" </span>&nbsp; selection</p>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon [ngStyle]="{'color':'#68CDE7'}" matListIcon style="font-size: small;">lens</mat-icon>
+                            Sell PieCredits in Virtual Campaigns
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon [ngStyle]="{'color':'#68CDE7'}" matListIcon style="font-size: small;">lens</mat-icon>
+                            Always Free Membership
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card style="margin-top: 1.5rem;">
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <img fxFlex="15%" style="width: 50px" src="../assets/svg/icons/revenue.svg">
+                    <p fxFlex= "50%" fxLayoutAlign="center" style="font-size: large;">Revenue</p>
+                    <app-learn-more-btn
+                        fxFlex= "30%"
+                        [BackgroundColor]="'#F8AA72'"
+                        [Path]="'/home'"
+                        [ButtonName]="'Learn More'"
+                    ></app-learn-more-btn>
+                </div>
+            </mat-card>
+        </div>
+
+        <div class="container box-2" fxLayout="column" fxFlex="40%">
+                <div fxLayout="row" fxLayoutAlign="center">
+                     <img style="width: 50px" src="../assets/svg/icons/sell.svg">
+                     <p class="TageHeader">In Virtual Campaigns</p>
+                </div>
+
+                <div class="TageTwo" fxLayout="row" fxLayoutAlign="center">
+                    <p style="margin-right: 0.5rem;">
+                       Sell PieCredits
+                        <span class="highlight" style="color: #84C549">$</span>
+                        <span class="highlight" style="color: #58585A">25</span>
+                        <span style="margin-left: 0.2rem;"> increments at your chosen discounted rate</span>
+                    </p>
+                </div>
+
+                <div class="TagThree" fxLayout="row" fxLayoutAlign="space-evenly">
+                    <mat-card fxFlex="20%" fxLayoutAlign="center">
+                        10%
+                    </mat-card>
+
+                    <mat-card fxFlex="20%" fxLayoutAlign="center">
+                        15%
+                    </mat-card>
+
+                    <mat-card fxFlex="20%" fxLayoutAlign="center">
+                        20%
+                    </mat-card>
+                </div>
+
+                <div class="List">
+                    <mat-list>
+                        <mat-list-item fxLayout="row">
+                            <img style="width: 40px;" src="../assets/svg/icons/invite.svg">
+                            <p class="ListText">Invited to Virtual Campaigns by Nonprofits</p>
+                        </mat-list-item>
+
+                        <mat-list-item fxLayout="row" style="margin-left: -.8rem!important;">
+                            <img style="width: 55px;" src="../assets/svg/icons/profit.svg">
+                            <p class="ListText">Set Return on Investment and Praticipation Levels</p>
+                        </mat-list-item>
+
+                        <mat-list-item fxLayout="row">
+                            <img style="width: 40px;" src="../assets/svg/icons/add.svg">
+                            <p class="ListText">Add more available PieCredits as you sell out</p>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+        </div>
+
+    </div>
+
+</div>

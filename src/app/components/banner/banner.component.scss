@@ -1,0 +1,74 @@
+@import '../../../assets/styles/global/colors';
+
+
+.Header {
+    width: 100%;
+    height: 370px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    z-index: 0;
+
+    .TagHeader {
+        width: fit-content;
+        margin: 1vh;
+        display: flex;
+        align-items: flex-start;
+        z-index: 1;
+        letter-spacing: 3px;
+
+        #TagHeaderOne {
+            margin-top: 1vh;
+            font-size: 2vw;
+            white-space: normal;
+            line-height: 1.1; 
+        }
+        #TagHeaderTwo {
+            line-height: 1.5;
+            margin-top: 1vh;
+            font-size: 4vw;
+            font-weight: bold;
+            white-space: pre;
+        }
+        #TagHeaderThree {
+            margin-top: 1.5vh;
+            font-size: 1.5vw;
+        }
+        .BtnHeader {
+            margin-top: .5rem;
+            
+            #JoinBetaBtn {
+                margin-top: 0.5rem;
+                margin-left: 1.5rem;
+                background-color: white;
+                color: $light-blue;
+                transition: 0.3s;
+            }
+            #JoinBetaBtn:hover {
+                color: white;
+                background-color:  $yellow;
+            }
+        }
+        
+    }
+}
+
+.Header svg {
+    position: absolute;
+    top: 0; right: 0; left: 0;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    #TagHeaderOne {
+        font-size: large!important;
+    }
+    #TagHeaderTwo {
+        font-size: xx-large!important;
+        white-space: pre;
+    }
+    #TagHeaderThree {
+        font-size: large!important;
+    }
+}

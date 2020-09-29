@@ -1,0 +1,65 @@
+<div class="Container">
+    <div fxLayout="column" fxLayoutAlign="space-evenly">
+        <div fxLayout="row" fxLayoutAlign="space-evenly">
+            <div fxLayout="row" class="Cards" fxFlex="80%">
+                <div class="Card" fxFlex="16.667%" fxFlex.xs="30%"> 
+                    <mat-list role="list">
+                        <mat-list-item class="Caption">Company</mat-list-item>
+                        <mat-list-item class="ListItem" (click)="scroll('#HowItWorksSection')">How It Works</mat-list-item>
+                        <mat-list-item class="ListItem" [routerLink]="['/beta']" routerLinkActive="router-link-active" >Beta Program</mat-list-item>
+                        <!-- <mat-list-item class="ListItem" [routerLink]="['/features']" routerLinkActive="router-link-active" >Features</mat-list-item> -->
+                    </mat-list>
+                </div>
+                <div class="Card" fxFlex="16.667%" fxFlex.xs="25%">
+                    <mat-list role="list">
+                        <mat-list-item class="Caption">Resources</mat-list-item>
+                        <mat-list-item class="ListItem" (click)="scroll('#ShopperSection')">Shoppers</mat-list-item>
+                        <mat-list-item class="ListItem" (click)="scroll('#BusinessSection')">Businesses</mat-list-item>
+                        <mat-list-item class="ListItem" (click)="scroll('#NonprofitSection')">Nonprofits</mat-list-item>
+                    </mat-list>
+                </div>
+                <div class="Card" fxFlex="16.667%" fxFlex.xs="25%">
+                    <mat-list role="list">
+                        <mat-list-item class="Caption">Support</mat-list-item>
+                        <mat-list-item class="ListItem" (click)="scroll('#ContactUsSection')">Contact Us</mat-list-item>
+                    </mat-list>
+                </div>
+            </div>
+            
+            <div fxLayout="column" class="FooterRight" fxFlex="20%" >
+                   
+                <mat-list role="list"  fxLayout="column" fxLayout.xs="column" fxFlex="100%">
+                    <mat-list-item fxLayout="row" fxLayoutAlign="end" >
+                        <img  src="https://img.icons8.com/fluent/24/000000/instagram-new.png"/>
+                        <img  src="https://img.icons8.com/fluent/24/000000/twitter.png"/>
+                        <img  src="https://img.icons8.com/color/24/000000/youtube-play.png"/>
+                        <img  src="https://img.icons8.com/fluent/24/000000/facebook-new.png"/>
+                    </mat-list-item>    
+                    <mat-list-item fxLayoutAlign="end" >Terms of Service</mat-list-item>
+                    <mat-list-item fxLayoutAlign="end" >Privacy Policy</mat-list-item>
+                </mat-list>
+    
+            </div>
+        </div>
+
+        <div fxLayout="column" fxLayoutAlign.xs= "space-evenly" class="AddressContainer">
+            <div fxFlex="16.667%" fxFlex.xs="100%">
+                <div mat-mat-button class="Logo"> 
+                    <mat-icon  
+                        class ="LogoHome" 
+                        svgIcon="logo-pieshares"
+                        [routerLink]="['/home']" routerLinkActive="router-link-active">
+                    </mat-icon>
+                </div>
+            </div>
+            <div fxFlex="16.667%" fxFlex.xs="50%">
+                Berea, OH 44017
+                USA
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>

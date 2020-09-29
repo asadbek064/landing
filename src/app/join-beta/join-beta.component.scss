@@ -1,0 +1,75 @@
+@import '../../assets/styles/global/colors';
+
+.bg-img{
+    min-height: 100vh;
+   width: 100%;
+  /*  background: url('../../assets/image/signup-page.jpg') no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover; */
+   }
+
+.wrapper {
+    overflow: hidden!important;
+}
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
+
+    #TitleTag {
+        font-size: xx-large;
+        margin-bottom: 2rem;
+        color: $black;
+        text-align: center;
+        line-height: 1.1;
+
+    }
+
+    #SubTag {
+        color: $black;
+        font-size: x-large;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+    
+
+    button{
+        color: white;
+        font-size: large;
+    }
+    #Shopper {
+        background-color: $light-purple;
+    }
+    #Business {
+        background-color: $light-orange;
+    }   
+    #Nonprofit {
+        background-color: $light-green;
+    }
+}
+
+
+@media only screen and (max-width: 600px) { 
+    .horizontal-space  {
+        margin-top: 2rem;
+    }   
+    #TitleTag {
+        line-height: 1.1;
+        font-size: larger!important;
+        margin-bottom: 2rem;
+        z-index: 1;
+        color: $black;
+        
+    }
+
+    button {
+        margin-top: 2rem;
+        width: 10rem;
+        font-size: x-large!important;
+    }
+}

@@ -1,0 +1,53 @@
+
+<div fxLayout="column" class="wrapper">
+    <app-navbar></app-navbar>
+    <div class="bg-img">
+        
+    </div>
+    <div *ngIf="selection" class="container" fxLayout="column" fxLayoutAlign="center" fxFlex="100%">
+       
+        <div id="TitleTag"fxLayoutAlign="center">Want to be a part of PieShares Beta?</div> 
+        <div id="SubTag" fxLayoutAlign="center">Who are you?</div> 
+
+
+       <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-evenly" fxLayoutAlign.xs="space-between">
+           <div fxFlex.xs="100%" fxLayoutAlign.xs="center">
+               <button
+                id="Shopper"
+                mat-raised-button
+                (click)="registerAsShopper()">
+                   Shopper
+               </button>
+           </div>
+           <div  fxFlex.xs="100%" fxLayoutAlign.xs="center">
+               <button
+                id="Business"
+                mat-raised-button
+                (click)="registerAsBusiness()">
+                   Business
+               </button>
+           </div>
+           <div  fxFlex.xs="100%" fxLayoutAlign.xs="center">
+               <button
+                   id="Nonprofit"
+                   mat-raised-button
+                   (click)="registerAsNonprofit()">
+                   Nonprofit
+               </button>
+           </div>
+       </div>
+    </div>
+
+    <div *ngIf="_registerAsShopper">
+        <app-register-shopper></app-register-shopper>
+    </div>
+
+    <div *ngIf="_registerAsBusiness">
+        <app-register-business></app-register-business>
+    </div>
+    
+    <div *ngIf="_registerAsNonprofit">
+        <app-register-nonprofit></app-register-nonprofit>
+    </div>
+
+</div>

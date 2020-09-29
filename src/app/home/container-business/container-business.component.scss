@@ -1,0 +1,96 @@
+@import '../../../assets/styles/global/colors';
+
+.Title {
+    margin-top: 4vh;
+    color: $black;
+    .TagTitle {
+        color: $light-orange;
+        font-size: 3vh;
+        font-weight: bold;
+        white-space: pre;
+    }
+    .TagSubText {
+        text-align: center;
+        margin-top: 2vh;
+        line-height: 1.2;
+        font-size: 2vh;
+    }
+}
+
+.wrapper{
+
+    mat-card-title {
+        color: $black;
+    }
+    .TageHeader {
+        font-size: 2.5vh!important;
+        font-weight: 750!important;
+        margin-left: 0.5rem;
+        color: $black;
+    }
+
+    .container {
+        margin-top: 1.5rem;
+    }
+
+    .TageTwo {
+        margin-top: 0.5rem;
+        text-align: center;
+    }
+    .TageTwo .highlight {
+        font-weight: 750!important;
+        font-size: large;
+    }
+
+    .TageTwo p {
+        font-size: medium ;
+        color: $black;
+    }
+
+    .TagThree {
+        mat-card {
+            font-size: xx-large;
+            font-weight: 600;
+            color: $light-blue;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    }
+}
+
+.wrapper {
+    margin: 1rem;
+}
+.box-1 {
+    mat-card {
+        background-color: $soft-white;
+    }
+}
+.ListOne {
+    mat-list-item {
+        margin-top: 2rem;
+    }
+
+    .bullet {
+        color: $light-blue!important;
+    }
+}
+
+.List {
+    .ListText {
+        margin-top: 1.5rem;
+        margin-left: 1rem;
+
+    }
+   mat-list-item {
+       margin-top: 1rem;
+   }
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    mat-list-item {
+        margin-top: 2rem;
+    }
+}

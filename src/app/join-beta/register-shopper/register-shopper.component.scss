@@ -1,0 +1,74 @@
+.content {       
+
+}
+
+.singup-page {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+     .app-name {
+         margin-top: 0px;
+         padding-bottom: 10px;
+         font-size: 32px;
+     }
+     .signup-form {
+
+     }
+}
+.text-center {
+    text-align: center;
+}
+
+  
+.w-100 {
+    width: 100%;
+}
+
+mat-form-field{
+   height: 5em;
+}  
+
+mat-card {
+    width: 340px;
+}
+
+
+.backArrow {
+    font-size: 50px;
+    transition: 0.2s;
+}
+
+.backArrow:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.linked {
+    display: flex;
+    flex-direction: row wrap;
+}
+
+.navIcon {
+    float: left;
+}
+
+
+.spaceBetween {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+
+@media only screen and (max-width: 600px) { 
+    
+
+}

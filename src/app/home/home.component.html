@@ -1,0 +1,15 @@
+<div fxLayout="column">
+    <app-navbar></app-navbar>
+        <app-banner></app-banner>
+            <app-container-how-it-works  id="HowItWorksSection" ></app-container-how-it-works>
+            <app-join-bar-btn [Path]="'/beta'" [ButtonName]="'Join Today'" [BackgroundColor]="'#68CDE7'"></app-join-bar-btn>
+            <app-shopper-matcard-component id="ShopperSection" ></app-shopper-matcard-component>
+            <app-join-bar-btn [Path]="'/beta'" [ButtonName]="'Join as Shopper'" [BackgroundColor]="'#E48CBA'" [JoinAs]="'shopper'"></app-join-bar-btn>
+            <app-container-business id="BusinessSection"></app-container-business>
+            <app-join-bar-btn [Path]="'/beta'" [ButtonName]="'Join as Business'" [BackgroundColor]="'#F8AA72'" [JoinAs]="'business'"></app-join-bar-btn>
+            <app-container-nonprofit id="NonprofitSection"></app-container-nonprofit>
+            <app-join-bar-btn [Path]="'/beta'" [ButtonName]="'Join as Nonprofit'" [BackgroundColor]="'#84C549'" [JoinAs]="'nonprofit'"></app-join-bar-btn>
+            <app-contact-us id="ContactUsSection"></app-contact-us>
+            <app-carousel id="Carousel"></app-carousel>
+    <app-footer fxFlexOffset="auto"></app-footer>
+</div>

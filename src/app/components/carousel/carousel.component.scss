@@ -1,0 +1,13 @@
+.wrapper {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 10rem;
+    margin-left: 10rem;    
+}
+
+
+@media only screen and (max-width: 768px) { 
+    .wrapper {
+        margin: 1rem;   
+    }
+}

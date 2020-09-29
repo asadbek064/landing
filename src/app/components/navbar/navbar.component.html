@@ -1,0 +1,58 @@
+<mat-sidenav-container class="sidenav-container">
+	<mat-sidenav #drawer (click)="drawer.toggle()" class="sidenav" fixedInViewport
+	
+		[mode]="(isMobile | async)"
+		>
+		<mat-toolbar>Menu</mat-toolbar>
+		<mat-nav-list>
+			<a mat-list-item  [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
+			<!-- <a mat-list-item  [routerLink]="['/features']" routerLinkActive="router-link-active" >Features</a> -->
+			<a mat-list-item  (click)="scroll('#HowItWorksSection')" >How It Works</a>
+			<a mat-list-item  (click)="scroll('#ShopperSection')" >Shoppers</a>
+			<a mat-list-item  (click)="scroll('#BusinessSection')" >Businesses</a>
+			<a mat-list-item  (click)="scroll('#NonprofitSection')" >Nonprofits</a>
+			<a mat-list-item  [routerLink]="['/beta']" routerLinkActive="router-link-active" >Join Beta</a>
+		</mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<mat-toolbar class="position-fixed">
+		<button
+			type="button"
+			aria-label="Toggle sidenav"
+			mat-icon-button
+			(click)="drawer.toggle()"
+			*ngIf="isMobile | async">
+			<mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+		</button>
+		<div mat-mat-button class="Logo" *ngIf="(isMobile | async)" > 
+			<mat-icon  
+				class="LogoHome-notext" 
+				svgIcon="logo-pieshares-notext"
+				[routerLink]="['/home']" routerLinkActive="router-link-active">
+			</mat-icon>
+		</div>
+		<mat-nav-list class="NavTop" *ngIf="!(isMobile | async) ">
+			<div mat-mat-button class="Logo"> 
+				<mat-icon  
+					class ="LogoHome" 
+					svgIcon="logo-pieshares"
+					[routerLink]="['/home']" routerLinkActive="router-link-active">
+				</mat-icon>
+			</div>
+			<div class="NavDiv" fxLayout="row" fxLayoutAlign="start" fxFlex="70%">
+				<button mat-button class="Nav-Btn" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</button>
+				<button mat-button class="Nav-Btn" (click)="scroll('#HowItWorksSection')" >How It Works</button>
+				<button mat-button class="Nav-Btn" (click)="scroll('#ShopperSection')" >Shoppers</button>
+				<button mat-button class="Nav-Btn" (click)="scroll('#BusinessSection')" >Businesses</button>
+				<button mat-button class="Nav-Btn" (click)="scroll('#NonprofitSection')" >Nonprofits</button>
+
+				<!-- <button mat-button class="Nav-Btn" [routerLink]="['/features']" routerLinkActive="router-link-active" >Features</button> -->
+			</div>
+			<button mat-button class="JoinBeta-Btn" [routerLink]="['/beta']" routerLinkActive="router-link-active" >Join Beta</button>
+		</mat-nav-list>
+		</mat-toolbar>
+		
+	</mat-sidenav-content>
+
+	</mat-sidenav-container>
+

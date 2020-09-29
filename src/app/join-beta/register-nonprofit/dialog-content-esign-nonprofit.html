@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Sign</h2>
+<mat-dialog-content class="mat-typography">
+    <p>{{ Date }}</p>
+    <br>
+    <p>Mr. Michael Gildea</p>
+    <p>Founder and CEO</p>
+    <p>PieShares</p>
+    <p>michael@PieShares.com</p>
+    <p>814-450-0647</p>
+   
+    <br>
+  <h3>Re:  Letter of Interest for PieShares Beta</h3>
+  <p>Dear Michael</p>
+
+  <p>{{ BusinessName }} is interested in participating in the PieShares Beta scheduled for January 2021.  
+     This interest is contingent on reviewing and approving the PieShares demo prior to the Beta.</p>
+
+  <p>As part of my company’s participation in the Beta, we will participate in at least 1 campaign selling PieCredits,
+     provide feedback, and select a Nonprofit as our Favorite Nonprofit.</p>
+
+  <p> I authorize you to share my company’s Beta interest, name, and logo with potential investors of PieShares, 
+      other partners of PieShares and make public on all PieShares marketing including, but not limited to, website, 
+      social media, print materials, media opportunities, and videos.</p>
+
+  <p>Sincerely</p>
+
+    <div fxLayout="column">
+        <canvas #sigPad width="300" height="200" (mousedown)="onMouseDown($event)"
+        (mousemove)="onMouseMove($event)"></canvas>
+        <div style="margin-top: 1rem;" fxLayout="row" fxLayoutAlign="start" >
+            <button  mat-raised-button (click)="clear()">clear</button>
+        </div>
+
+    </div>
+    
+   
+
+  <br>
+
+  <h3>{{ Name }}</h3>
+  <h3>{{ Title }}</h3>
+  <h3>{{ BusinessName }}</h3>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial (click)="Agree()">Agree</button>
+</mat-dialog-actions>

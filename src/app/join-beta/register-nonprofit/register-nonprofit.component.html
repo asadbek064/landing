@@ -1,0 +1,336 @@
+
+<div class="container">
+    <mat-card>
+        <div class="text-center">
+            <h2 class="app-name">Sign up for Beta</h2>
+        </div>
+    <mat-horizontal-stepper  #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form class="basicInformation"[formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Basic Information</ng-template>
+                  <mat-form-field>
+                      <mat-label>Nonprofit Name</mat-label>
+                      <input matInput  formControlName="NonprofitName"
+                             type="text"
+                             [required]="true" />
+                      <mat-error *ngIf="firstFormGroup.hasError('required', 'NonprofitName')"
+                      >Require</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                      <mat-label>Street Address</mat-label>
+                      <input matInput  formControlName="StreetAddress"
+                             type="text"
+                             [required]="true" />
+                      <mat-error *ngIf="firstFormGroup.hasError('required', 'StreetAddress')"
+                      >Require</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                      <mat-label>City</mat-label>
+                      <input matInput  formControlName="City"
+                             type="text"
+                             [required]="true" />
+                      <mat-error *ngIf="firstFormGroup.hasError('required', 'City')"
+                      >Require</mat-error>
+                  </mat-form-field>
+
+                  <div class="linked">
+                      <mat-form-field>
+                          <mat-label>State</mat-label>
+                          <mat-select  formControlName="State"
+                                       [required]="true">
+
+                              <mat-option *ngFor="let stateList of stateList"
+                                  [value] = stateList.viewValue>
+                                  {{stateList.viewValue}}
+                              </mat-option>
+                              <mat-error *ngIf="firstFormGroup.hasError('required', 'State')"
+                              >Choose One</mat-error>
+
+
+                          </mat-select>
+                      </mat-form-field>
+                      <mat-form-field class="zipcode">
+                          <mat-label>Zip Code</mat-label>
+                          <input matInput  formControlName="ZipCode"
+                                 type="number"
+                                 [required]="true" />
+                          <mat-error *ngIf="firstFormGroup.hasError('required', 'Zipcode')"
+                          >Required</mat-error>
+                      </mat-form-field>
+                  </div>
+
+                  <mat-form-field>
+                      <mat-label>Website URL</mat-label>
+                      <input matInput  formControlName="WebsiteUrl"/>
+                  </mat-form-field>
+
+                  <mat-form-field >
+                      <mat-label>Type of Nonprofit</mat-label>
+                      <mat-select formControlName="NonprofitType"
+                                  [required]="true">
+                              <mat-optgroup *ngFor="let group of industrieGroups"
+                                  [label]="group.name" [disabled]="group.disabled">
+                                  <mat-option *ngFor="let Industrie of group.industrie"
+                                      [value]= "Industrie.viewValue">
+                                      {{Industrie.viewValue}}
+                                  </mat-option>
+                                  <mat-error *ngIf="firstFormGroup.hasError('required', 'Type')"
+                                  >Required</mat-error>
+                              </mat-optgroup>
+                      </mat-select>
+                  </mat-form-field>
+
+                <div>
+                  <button mat-raised-button color="primary" (click)="nextFromStepOne()">Next</button>
+                </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Detailed Information</ng-template>
+              <div class="linked">
+                  <mat-form-field>
+                      <mat-label>Employer Identification Number (EIN)</mat-label>
+                      <input matInput  formControlName="EIN"
+                             placeholder="123456789"
+                             type="number"
+                             [required]="true" />
+                          <mat-error *ngIf="secondFormGroup.hasError('required', 'EIN')"
+                          >Required</mat-error>
+
+                  </mat-form-field>
+
+
+                      <mat-form-field>
+                          <mat-label>Socials</mat-label>
+                          <mat-select
+                              [formControl]="secondFormGroup.controls.socials"
+                              multiple
+                          >
+                              <mat-select-trigger>
+                                  {{secondFormGroup.controls.socials.value ? secondFormGroup.controls.socials.value[0] : ''}}
+                                  <span *ngIf="secondFormGroup.controls.socials.value?.length > 1" class="example-additional-selection">
+                                    (+{{secondFormGroup.controls.socials.value.length - 1}} {{secondFormGroup.controls.socials.value?.length === 2 ? 'other' : 'others'}})
+                                  </span>
+                                </mat-select-trigger>
+                                <mat-option *ngFor="let social of socialList" [value]="social">{{social}}</mat-option>
+                          </mat-select>
+                      </mat-form-field>
+
+                    </div>
+                      <div class="linked">
+                          <mat-form-field *ngIf="trigLinkedIn">
+                              <mat-label>LinkedIn</mat-label>
+                              <input
+                                  matInput
+                                  type="text"
+                                  formControlName="SocialLinkedIn"
+                                  placeholder="linkedin.com/in/"
+                              />
+
+                          </mat-form-field>
+
+                          <mat-form-field *ngIf="trigTwitter">
+                              <mat-label>Twitter</mat-label>
+                              <input
+                                  matInput
+                                  type="text"
+                                  formControlName="SocialTwitter"
+                                  placeholder="twitter.com/"
+                              />
+
+                          </mat-form-field>
+
+                          <mat-form-field *ngIf="trigYoutube">
+                              <mat-label>Youtube</mat-label>
+                              <input
+                                  matInput
+                                  type="text"
+                                  formControlName="SocialYoutube"
+                                  placeholder="youtube.com/channel/"
+                              />
+
+                          </mat-form-field>
+
+                          <mat-form-field *ngIf="trigInstagram">
+                              <mat-label>Instagram</mat-label>
+                              <input
+                                  matInput
+                                  type="text"
+                                  formControlName="SocialInstagram"
+                                  placeholder="instagram.com/"
+                              />
+
+                          </mat-form-field>
+
+                          <mat-form-field *ngIf="trigFacebook">
+                              <mat-label>Facebook</mat-label>
+                              <input
+                                  matInput
+                                  type="text"
+                                  formControlName="SocialFacebook"
+                                  placeholder="facebook.com/"
+                              />
+
+                          </mat-form-field>
+                      </div>
+
+
+
+                  <div class="linked">
+                      <mat-form-field>
+                          <mat-label>Phone - Work</mat-label>
+                          <span matPrefix>+1 &nbsp;</span>
+                          <input matInput
+                                 formControlName="PhoneWork"
+                                 type="number"
+                                 [required]="true"
+                          />
+                          <mat-error *ngIf="secondFormGroup.hasError('required', 'PhoneWork')"
+                              >Required</mat-error>
+                      </mat-form-field>
+                      <mat-form-field>
+                          <mat-label>Phone - Mobile</mat-label>
+                          <span matPrefix>+1 &nbsp;</span>
+                          <input matInput formControlName="RegistereePhone"
+                                  type="number"
+                          />
+
+                      </mat-form-field>
+
+
+
+                  <mat-form-field>
+                      <mat-label>Work Email</mat-label>
+                      <input matInput formControlName="WorkEmail"
+                             type="text"
+                             [required]="true"/>
+                      <mat-error *ngIf="secondFormGroup.hasError('required', 'WorkEmail')"
+                          >Required</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                      <mat-label>Your LinkedIn</mat-label>
+                      <input matInput  formControlName="RegistereeLinkedIn"
+                             type="text" />
+                          <mat-error *ngIf="secondFormGroup.hasError('required', 'RegistereeLinkedIn')"
+                          >Required</mat-error>
+                  </mat-form-field>
+
+                  <div fxLayout="row" fxLayoutAlign="space-between">
+                    <mat-form-field fxFlex="45%">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="FirstName"
+                               type="text"
+                               [required]="true"/>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="45%">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="LastName"
+                               type="text"
+                               [required]="true"/>
+                    </mat-form-field>
+              </div>
+
+                  <mat-form-field>
+                      <mat-label>Title</mat-label>
+                      <input matInput formControlName="Title"
+                                 type="text"
+                          />
+                      <!-- <mat-select formControlName="Title"
+                                  [required]="true">
+
+                          <mat-option *ngFor="let title of title"
+                              [value] = "title.viewValue">
+                              {{title.viewValue}}
+                          </mat-option>
+
+                      </mat-select> -->
+                  </mat-form-field>
+
+              </div>
+
+
+            </form>
+                  <div fxFlex="100%" fxLayout="row" fxLayoutAlign="space-between">
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-raised-button color="primary" id="NexBtn" (click)="nextFromStepTwo()">Next</button>
+                  </div>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup">
+          <form [formGroup]="thirdFormGroup">
+              <div class="linked" style="margin-top: 1rem;">
+                  <mat-label>Upload Nonprofit Logo</mat-label>
+                  <mat-hint>JPG/PNG</mat-hint>
+                  <input type='file'
+                          id="imageUpload" accept=".png, .jpg, .jpeg"
+                          name="file"
+                          #fileInput (change)="uploadFile($event)"
+                          [required] = " true"/>
+              </div>
+
+              <!-- <div class="linked spaceBetween">
+                  <mat-label>Was this Nonprofit referred?</mat-label>
+
+                  <mat-radio-group>
+                          <mat-radio-button
+                              value="1"
+                              (click)="setNonprofitReferredState(true)"
+                              >Yes
+                          </mat-radio-button>
+                          <mat-radio-button
+                              value="2"
+                              (click)="setNonprofitReferredState(false)"
+                          >No
+                          </mat-radio-button>
+                  </mat-radio-group>
+              </div> -->
+
+              <mat-form-field *ngIf="NonprofitReferredState">
+
+                  <mat-label>Referral Id</mat-label>
+                  <input
+                      matInput
+                      type="text"
+                      class="spaceBetween"
+                      formControlName="ReferralId"
+                  />
+              </mat-form-field>
+
+              <div class="linked">
+                  <mat-checkbox
+                      style="margin-top: 1rem;"
+                      formControlName="eNewsletter"
+                      value="eNewsletter">
+                          eNewsletter
+                  </mat-checkbox>
+
+
+                  <mat-checkbox
+                  style="margin-top: 1rem; margin-bottom: 1rem;"
+                  value="TermsConditions"
+                  formControlName="TermsAgree"
+                  [required]="true">
+
+                      I agree to  <span id="TermsAndConditons" >Terms And Conditons</span>
+              </mat-checkbox>
+
+              </div>
+
+
+          </form>
+
+          <button mat-raised-button  (click)="openDialog()" style="margin-bottom: 1rem;">Sign eDoc</button>
+
+          <ng-template matStepLabel>Submit</ng-template>
+          <div fxFlex="100%" fxLayout="row" fxLayoutAlign="space-between">
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-raised-button color="primary" id="NexBtn" (click)="submit()">Submit</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+      </mat-card>
+  </div>

@@ -1,0 +1,88 @@
+@import '../../../assets/styles/global/colors';
+
+.tiny{
+
+    width:30px;
+    display:inline-block;
+}
+
+.Title { 
+    margin-top: 4vh;
+    color: $black;
+    .TagTitle {
+        color: $light-purple;
+        font-size: 3vh;
+        font-weight: bold;
+        white-space: pre;
+    }
+    .TagSubText {
+        line-height: 1.2;
+        font-size: 2.5vh;
+        text-align: center;
+    }
+    .TagSubTextTitle{
+        display:block;
+        margin:1em;
+        font-size: 2.17vh;
+    }
+}
+
+
+.Container {
+
+     margin-top: 1vh;   
+
+}
+
+.ToolTip {
+        margin-top: 1vh;
+        
+}
+
+.quote-wrapper {
+     width: 200px;
+     height: 200px;
+     color: $black;
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+     transition: 0.26s;
+     text-align: center;
+     font-size: 1.17em;
+     border-radius: 25px;
+     background-color: $soft-white;
+
+}
+.quote-wrapper:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.quote-wrapper p {
+    font-weight: bold;
+    font-size: medium;
+ }
+
+.quote-wrapper img {
+    width: 100px;
+     display:block;
+     margin-left:auto;
+     margin-right:auto;
+     margin-top: auto;
+}
+h3{
+    display:block;
+    font-size:1.17em;
+    margin-top:1em;
+    margin-bottom:1em;
+ }
+
+
+ #card-3, #card-4 {
+    margin-top: 0.5rem;
+}
+
+ @media only screen and (max-width: 768px) { 
+    .quote-wrapper {
+        margin-top: 2rem;
+    }
+
+ }
